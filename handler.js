@@ -35,6 +35,24 @@ function DayOfWeek(dayofweek)
   break;
  }
 }
+
+function SelectMetricType(metric)
+{
+switch(metric)
+{
+    case("top"):
+    return "Most";
+    break;
+    case("least"):
+    return "Least";
+    break;
+    default:
+    return "";
+    break;
+}    
+
+
+}
 console.log(visualtype);
 console.log(metrictype);
 console.log(typeof daynight);
@@ -42,7 +60,7 @@ console.log(dayoftheweek);
 $('#mychart').html("");
 //console.log($(this).attr("id"))
 $.ajax({
-   url:'snippets/demo.php',
+   url:'snippets/dayofweekhandler.php',
    METHOD:'POST',
    data:{
     visualtype:visualtype,
@@ -67,7 +85,7 @@ function mycharts(element, height) {
     // Define main variables
     // default variables for all
     var d3Container = d3.select(element),
-        margin = {top: 10, right: 10, bottom: 30, left: 180},
+        margin = {top: 10, right: 10, bottom: 90, left: 180},
         width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
         height = height - margin.top - margin.bottom;
 
@@ -82,8 +100,13 @@ function mycharts(element, height) {
     if(visualtype == "bar")
 {
         barChart(response,metrictype)
-        $('.titleofchart').html("Most Sold Product on "+DayOfWeek(dayoftheweek));
+        $('.titleofchart').html(SelectMetricType(metrictype)+" Sold Product on "+DayOfWeek(dayoftheweek));
 }
+// if(visualtype == "line")
+// {
+//         lineChart(response,metrictype)
+//         $('.titleofchart').html("Most Sold Product on "+DayOfWeek(dayoftheweek));
+// }
 // bar chart to show most product sold
 function barChart(response,sort)
 {
@@ -233,6 +256,24 @@ function barChart(response,sort)
                    .on('mouseover', tip.show)
                    .on('mouseout', tip.hide);
 
+                   svg.append("text")
+                  .attr("transform", "rotate(-90)")
+                  .attr("y", 0 - margin.left)
+                  .attr("x",0 - (height / 2))
+                  .attr("dy", "1em")
+                  .style("text-anchor", "top")
+                  .text("Items")
+                  .style("font-size",14);  
+
+
+                  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+        (height + margin.top + 40) + ")")
+      .style("text-anchor", "middle")
+      .text("Number of Items Sold")
+      .style("font-size",14);
+
 
                    // svg.selectAll(".d3-bar")
                    //     .data(data)
@@ -304,6 +345,9 @@ function barChart(response,sort)
 
 }// end of bar chart
 
+// line chart
+
+
 
 
 
@@ -341,6 +385,14 @@ $(this).addClass("buttonactive");
 $('.daynight').on("click",function(){
     $('.daynight').removeClass("buttonactive");
     $(this).addClass("buttonactive"); 
+});
+
+
+
+// clear day night
+$('#cleardaynight').on("click",function(){
+    $('.daynight').removeClass("buttonactive");
+    //$(this).addClass("buttonactive"); 
 });
 
 

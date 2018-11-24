@@ -73,6 +73,7 @@
 <div class="btn-group mt5">
 <button type="button" class="btn btn-primary p5 daynight" id="day">Day</button>
 <button type="button" class="btn btn-primary p5 daynight" id="night" >Night</button>
+<button type="button" class="btn btn-primary p5 " id="cleardaynight" >Clear</button>
 </div>
   <!-- Day Week Month Year <b id="custom" class="text-primary">Custom</b> -->
 
@@ -129,7 +130,7 @@ function mycharts(element, height) {
     // Define main variables
     // default variables for all
     var d3Container = d3.select(element),
-        margin = {top: 10, right: 10, bottom: 50, left: 150},
+        margin = {top: 10, right: 10, bottom: 90, left: 150},
         width = d3Container.node().getBoundingClientRect().width - margin.left - margin.right,
         height = height - margin.top - margin.bottom;
 
@@ -330,6 +331,23 @@ function barChart(jsonDataName,sort)
                    //         .on('mouseover', tip.show)
                    //         .on('mouseout', tip.hide);
 
+                   svg.append("text")
+                  .attr("transform", "rotate(-90)")
+                  .attr("y", 0 - margin.left)
+                  .attr("x",0 - (height / 2))
+                  .attr("dy", "1em")
+                  .style("text-anchor", "top")
+                  .text("Items")
+                  .style("font-size",14);  
+
+
+                  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+        (height + margin.top + 40) + ")")
+      .style("text-anchor", "middle")
+      .text("Number of Items Sold")
+      .style("font-size",14);
 
 
 

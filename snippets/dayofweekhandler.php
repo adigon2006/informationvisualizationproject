@@ -2,6 +2,8 @@
 require_once('../includes/MyDbHandler.php');
 $dbhandler = new Mydbhandler();
 global $sampletestcode;
+$ascdsc = "DESC"; 
+$hourquery = "";
 $visualtype = "";
 $metrictype = "";
 $dayoftheweek = "";
@@ -33,9 +35,17 @@ $ascdsc = "DESC";
 }
 if($metrictype == "least")
 {
-    $ascdsc = "ASC"; 
+$ascdsc = "ASC"; 
+}
+if($daynight == "day")
+{
+$hourquery = " and HOUR(Time)  >= 0  and HOUR(Time)  < 18 ";
+}
+if($daynight == "night")
+{
+    $hourquery = " and HOUR(Time)  > 18  and HOUR(Time)  < 24  ";
 }     
-$query = "select Item, COUNT(Item) AS TotalSold FROM bakery WHERE WEEKDAY(DATE) = ".$dayoftheweek." GROUP BY Item ORDER BY COUNT(Item)".$ascdsc." LIMIT 20";
+$query = "select Item, COUNT(Item) AS TotalSold FROM bakery WHERE WEEKDAY(DATE) = ".$dayoftheweek. $hourquery ." GROUP BY Item ORDER BY COUNT(Item) ".$ascdsc." LIMIT 20";
 //$query = "SELECT Item, COUNT(Item) AS TotalSold FROM bakery WHERE WEEKDAY(DATE) = 5 GROUP BY Item ORDER BY COUNT(Item) DESC LIMIT 20";
 $sampletestcode = $dbhandler->QueryByDate($query);
 }
