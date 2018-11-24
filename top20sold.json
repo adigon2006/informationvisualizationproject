@@ -1,0 +1,102 @@
+[
+    {
+      "Item": "Coffee",
+      "TotalSold": 5471,
+      "": ""
+    },
+    {
+      "Item": "Bread",
+      "TotalSold": 3325,
+      "": ""
+    },
+    {
+      "Item": "Tea",
+      "TotalSold": 1435,
+      "": ""
+    },
+    {
+      "Item": "Cake",
+      "TotalSold": 1025,
+      "": ""
+    },
+    {
+      "Item": "Pastry",
+      "TotalSold": 856,
+      "": ""
+    },
+    {
+      "Item": "NONE",
+      "TotalSold": 786,
+      "": ""
+    },
+    {
+      "Item": "Sandwich",
+      "TotalSold": 771,
+      "": ""
+    },
+    {
+      "Item": "Medialuna",
+      "TotalSold": 616,
+      "": ""
+    },
+    {
+      "Item": "Hot chocolate",
+      "TotalSold": 590,
+      "": ""
+    },
+    {
+      "Item": "Cookies",
+      "TotalSold": 540,
+      "": ""
+    },
+    {
+      "Item": "Brownie",
+      "TotalSold": 379,
+      "": ""
+    },
+    {
+      "Item": "Farm House",
+      "TotalSold": 374,
+      "": ""
+    },
+    {
+      "Item": "Muffin",
+      "TotalSold": 370,
+      "": ""
+    },
+    {
+      "Item": "Alfajores",
+      "TotalSold": 369,
+      "": ""
+    },
+    {
+      "Item": "Juice",
+      "TotalSold": 369,
+      "": ""
+    },
+    {
+      "Item": "Soup",
+      "TotalSold": 342,
+      "": ""
+    },
+    {
+      "Item": "Scone",
+      "TotalSold": 327,
+      "": ""
+    },
+    {
+      "Item": "Toast",
+      "TotalSold": 318,
+      "": ""
+    },
+    {
+      "Item": "Scandinavian",
+      "TotalSold": 277,
+      "": ""
+    },
+    {
+      "Item": "Truffles",
+      "TotalSold": 193,
+      "": ""
+    }
+  ]

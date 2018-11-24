@@ -1,0 +1,102 @@
+[
+  {
+    "Item": "Coffee",
+    "TotalSold": 710,
+    "": ""
+  },
+  {
+    "Item": "Bread",
+    "TotalSold": 350,
+    "": ""
+  },
+  {
+    "Item": "Tea",
+    "TotalSold": 194,
+    "": ""
+  },
+  {
+    "Item": "Cake",
+    "TotalSold": 139,
+    "": ""
+  },
+  {
+    "Item": "Pastry",
+    "TotalSold": 119,
+    "": ""
+  },
+  {
+    "Item": "NONE",
+    "TotalSold": 88,
+    "": ""
+  },
+  {
+    "Item": "Sandwich",
+    "TotalSold": 82,
+    "": ""
+  },
+  {
+    "Item": "Cookies",
+    "TotalSold": 77,
+    "": ""
+  },
+  {
+    "Item": "Hot chocolate",
+    "TotalSold": 59,
+    "": ""
+  },
+  {
+    "Item": "Farm House",
+    "TotalSold": 55,
+    "": ""
+  },
+  {
+    "Item": "Soup",
+    "TotalSold": 54,
+    "": ""
+  },
+  {
+    "Item": "Medialuna",
+    "TotalSold": 51,
+    "": ""
+  },
+  {
+    "Item": "Alfajores",
+    "TotalSold": 43,
+    "": ""
+  },
+  {
+    "Item": "Muffin",
+    "TotalSold": 41,
+    "": ""
+  },
+  {
+    "Item": "Toast",
+    "TotalSold": 40,
+    "": ""
+  },
+  {
+    "Item": "Scandinavian",
+    "TotalSold": 39,
+    "": ""
+  },
+  {
+    "Item": "Juice",
+    "TotalSold": 29,
+    "": ""
+  },
+  {
+    "Item": "Coke",
+    "TotalSold": 24,
+    "": ""
+  },
+  {
+    "Item": "Brownie",
+    "TotalSold": 23,
+    "": ""
+  },
+  {
+    "Item": "Baguette",
+    "TotalSold": 23,
+    "": ""
+  }
+]
