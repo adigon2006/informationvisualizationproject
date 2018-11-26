@@ -8,6 +8,7 @@ $visualtype = "";
 $metrictype = "";
 $dayoftheweek = "";
 $daynight = "";
+$dayoftheweekquery = "";
 if(isset($_GET['visualtype']))
 {
 $visualtype = $_GET['visualtype'];
@@ -39,13 +40,17 @@ $ascdsc = "ASC";
 }
 if($daynight == "day")
 {
-$hourquery = " and HOUR(Time)  >= 0  and HOUR(Time)  < 18 ";
+$hourquery = " HOUR(Time)  >= 0  and HOUR(Time)  < 18 ";
 }
 if($daynight == "night")
 {
-    $hourquery = " and HOUR(Time)  > 18  and HOUR(Time)  < 24  ";
+    $hourquery = " HOUR(Time)  > 18  and HOUR(Time)  < 24  ";
+}
+if($dayoftheweek != "")
+{
+$dayoftheweekquery = " WEEKDAY(DATE) = ".$dayoftheweek." and "; 
 }     
-$query = "select Item, COUNT(Item) AS TotalSold FROM bakery WHERE WEEKDAY(DATE) = ".$dayoftheweek. $hourquery ." GROUP BY Item ORDER BY COUNT(Item) ".$ascdsc." LIMIT 20";
+$query = "select Item, COUNT(Item) AS TotalSold FROM bakery WHERE ". $dayoftheweekquery . $hourquery." GROUP BY Item ORDER BY COUNT(Item) ".$ascdsc." LIMIT 20";
 //$query = "SELECT Item, COUNT(Item) AS TotalSold FROM bakery WHERE WEEKDAY(DATE) = 5 GROUP BY Item ORDER BY COUNT(Item) DESC LIMIT 20";
 $sampletestcode = $dbhandler->QueryByDate($query);
 }

@@ -68,6 +68,7 @@
 <button type="button" class="btn btn-primary p5 dayoftheweek" id="4" >Fri</button>
 <button type="button" class="btn btn-primary p5 dayoftheweek" id="5" >Sat</button>
 <button type="button" class="btn btn-primary p5 dayoftheweek" id="6" >Sun</button>
+<button type="button" class="btn btn-primary p5" id="cleardayofweek" >Clear</button>
 </div>
 <div class="text-primary demo"><h6 id="reportrange">Day/Night Shift</h6></div>
 <div class="btn-group mt5">
