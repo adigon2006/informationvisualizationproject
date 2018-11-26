@@ -55,6 +55,10 @@
 <button type="button" class="btn btn-primary p5 visualizationtype buttonactive" id="bar">Bar Chart</button>
 <button type="button" class="btn btn-primary p5 visualizationtype" id="line" >Line Chart</button>
 </div>
+<p class="mb0">Numbers of Items: <b class="text-danger"><span id="rangevalue">20</span></b></p>
+<div class="slidecontainer">
+  <input type="range" min="1" max="95" value="20" class="slider" id="ItemRange">
+</div>
 </div>
 
 <div class="col-md-6 text-right mt5">

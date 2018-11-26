@@ -30,7 +30,6 @@ if(isset($_GET['daynight']))
 {
     $daynight = $_GET['daynight'];
 }
-
 if(isset($_GET['range']))
 {
 $range = $_GET['range'];
@@ -85,18 +84,19 @@ if($dayoftheweek == "")
 
 if($dayoftheweek != "")
 {
-$dayoftheweekquery = " WEEKDAY(DATE) = ".$dayoftheweek; 
+$dayoftheweekquery = " WEEKDAY(DATE) = ".$dayoftheweek." "; 
 }
 if($daynight != "" || $dayoftheweek != "")
 {
 $prefixwhere = " WHERE ";
 }     
-$query = "select Item, COUNT(Item) AS TotalSold FROM bakery ".$prefixwhere . $dayoftheweekquery . $hourquery." GROUP BY Item ORDER BY COUNT(Item) ".$ascdsc.$rangequery;
+$query = "select Item, COUNT(Item) AS TotalSold FROM bakery ".$prefixwhere . $dayoftheweekquery . $hourquery." GROUP BY Item ORDER BY COUNT(Item) ".$ascdsc. $rangequery;
 //$query = "SELECT Item, COUNT(Item) AS TotalSold FROM bakery WHERE WEEKDAY(DATE) = 5 GROUP BY Item ORDER BY COUNT(Item) DESC LIMIT 20";
+//echo($query);
 $sampletestcode = $dbhandler->QueryByDate($query);
 }
 
 
 print_r($sampletestcode);
-//echo($daynight);
+//echo($query);
 ?>
